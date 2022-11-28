@@ -26,3 +26,5 @@ add_executable(linkedList linkedList.cpp)
 
 # algorithm2-6
 add_executable(algorithm2-6 algorithm2-6.cpp linkedList.cpp)
+# algorithm2-7
+add_executable(algorithm2-7 algorithm2-7.cpp linkedList.cpp)
