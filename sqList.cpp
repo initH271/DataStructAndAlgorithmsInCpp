@@ -11,9 +11,7 @@
 #include "utils/dsexception.h"
 #include "sqList.h"
 #include <cstdio>
-
-
-const char *THEINDEXOUTOFRANGE = "the index out of range";
+#include "exceptionMessage.h"
 
 void initList(pSqList &L, int size) {
     L->m_data = new ElementType[size];
@@ -45,7 +43,7 @@ void displayList(pSqList &L) {
     for (int i = 0; i < L->m_length; ++i) {
         printf("%2d ", *(L->m_data + i));
     }
-    printf("], length = %d\n", L->m_length);
+    printf("], m_length = %d\n", L->m_length);
 }
 
 ElementType &getElement(pSqList &L, int index) {
