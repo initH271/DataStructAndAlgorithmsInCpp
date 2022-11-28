@@ -19,3 +19,7 @@ add_executable(algorithm2-3 algorithm2-3.cpp sqList.cpp include/utils/util.h)
 add_executable(algorithm2-4 algorithm2-4.cpp sqList.cpp include/utils/util.h)
 # algorithm2-5
 add_executable(algorithm2-5 algorithm2-5.cpp sqList.cpp include/utils/util.h)
+
+# =========链表 及其算法==================================
+
+add_executable(linkedList linkedList.cpp)

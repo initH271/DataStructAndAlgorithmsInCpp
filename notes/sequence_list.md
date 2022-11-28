@@ -67,12 +67,12 @@ void displayList(pSqList &L) {
     for (int i = 0; i < L->m_length; ++i) {
         printf("%2d ", *(L->m_data + i));
     }
-    printf("], length = %d\n", L->m_length);
+    printf("], m_length = %d\n", L->m_length);
 }
 
 ElementType &getElement(pSqList &L, int index) {
     if (index < 0 || index >= L->m_length) {
-        throw DsException(THEINDEXOUTOFRANGE);
+        throw DsException(THEINDEXOUTOFRANGE); // DsException is from utils/dsexception.h
     }
     return L->m_data[index];
 }
