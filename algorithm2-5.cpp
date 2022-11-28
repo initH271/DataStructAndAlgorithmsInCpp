@@ -12,36 +12,34 @@
 #include "utils/util.h"
 
 // partition算法实现
-int move1(pSqList &L){
-    int left=0,right = L->m_length-1;
-    while (left<right){
-        while (left<right && L->m_data[right]%2==0)
-            --right;
-        while (left<right && L->m_data[left]%2!=0)
-            ++left;
-        if(left<right)
-            swap(L->m_data[left],L->m_data[right]);
+int move1(pSqList &L) {
+    int left = 0, right = L->m_length - 1;
+    while (left < right) {
+        while (left < right && L->m_data[right] % 2 == 0)
+            --right; // 从右扫描奇数
+        while (left < right && L->m_data[left] % 2 != 0)
+            ++left; // 从左扫描偶数
+        if (left < right)
+            swap(L->m_data[left], L->m_data[right]); // 交换位置
     }
-
     return left;
 }
+
 // 令[0,i]为奇数区，从左至右扫描，将奇数放置奇数区
-int move2(pSqList &L){
+int move2(pSqList &L) {
     int i = -1;
-    for(int j=0;j<L->m_length;j++){
-        if(L->m_data[j]%2==1){ // 找到奇数
+    for (int j = 0; j < L->m_length; j++) {
+        if (L->m_data[j] % 2 == 1) { // 找到奇数
             i++;
-            if(i!=j) // 放置于奇数区
-                swap(L->m_data[i],L->m_data[j]);
+            if (i != j) // 放置于奇数区
+                swap(L->m_data[i], L->m_data[j]);
         }
     }
     return i;
 }
 
 
-
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
     int arr[] = {3, 8, 2, 7, 1, 5, 3, 4, 6, 0};
     pSqList L = new SqList;
     createList(L, arr, 10);
