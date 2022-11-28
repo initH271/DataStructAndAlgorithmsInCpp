@@ -3,24 +3,19 @@ project(dsaincpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
+# add googletest framework
 add_subdirectory(googletest)
 include_directories(googletest/include googletest)
-add_executable(test linkedlist_unittest.cpp)
+target_link_libraries(gtest gtest_main)
 
-target_link_libraries(test gtest gtest_main)
+include_directories(include)
 
-add_executable(dsaincpp main.cpp)
-
-# binary tree
-add_executable(binTreeTest binaryTree_unittest.cpp)
-
-# huffman tree
-add_executable(huffmantree huffmantree.cpp)
-
-# 顺序表
+# =========顺序表 及其算法=================================
 add_executable(sqList sqList.cpp)
 
 # algorithm2-3
-add_executable(algorithm2-3 algorithm2-3.cpp sqList.cpp)
+add_executable(algorithm2-3 algorithm2-3.cpp sqList.cpp include/utils/util.h)
 # algorithm2-4
-add_executable(algorithm2-4 algorithm2-4.cpp sqList.cpp)
+add_executable(algorithm2-4 algorithm2-4.cpp sqList.cpp include/utils/util.h)
+# algorithm2-5
+add_executable(algorithm2-5 algorithm2-5.cpp sqList.cpp include/utils/util.h)

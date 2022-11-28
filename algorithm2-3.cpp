@@ -1,6 +1,6 @@
 
 // 【例2.3】 删除线性表中所有值为x的元素，要求算法的时间复杂度为O(n), 空间复杂度为O(1)
-#include "SqList.h"
+#include "sqList.h"
 #include <cstdio>
 
 /**
