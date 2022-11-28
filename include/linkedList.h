@@ -31,10 +31,10 @@ typedef struct LinkedList{ // 链表
 void insertNodeAfter(pLinkedNode &node, pLinkedNode &x); // 插入直接后继节点
 void removeNodeAfter(pLinkedNode &node); // 移除后继节点
 
-pLinkedNode &removeNodeAfterAndReturn(pLinkedNode &node); // 移除直接后续节点并返回
+pLinkedNode removeNodeAfterAndReturn(pLinkedNode &node); // 移除直接后续节点并返回
 bool checkIndexOnList(pLinkedList &L,int index); // 检查索引是否有效
 void createListFront(pLinkedList &L, ElementType *&arr, int n); // 从元素数组创建一个链表，使用头插法
-void createListRear(pLinkedList &L, ElementType *&arr, int n); // 从元素数组创建一个链表，使用尾插法
+void createListRear(pLinkedList &L, int *arr, int n); // 从元素数组创建一个链表，使用尾插法
 void initList(pLinkedList &L); // 初始化一个链表
 void destroyList(pLinkedList &L); // 销毁一个链表
 bool listEmpty(pLinkedList &L); // 判断链表是否为空

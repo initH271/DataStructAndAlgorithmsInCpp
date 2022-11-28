@@ -8,6 +8,8 @@
  *
  **/
 
+
+#include <cstdio>
 #include "linkedList.h"
 #include "utils/dsexception.h"
 #include "exceptionMessage.h"
@@ -23,14 +25,14 @@ void removeNodeAfter(pLinkedNode &node) { // 移除node的直接后继节点
     delete oldNode;
 }
 
-pLinkedNode &removeNodeAfterAndReturn(pLinkedNode &node) { // 移除node的直接后继节点并返回
+pLinkedNode removeNodeAfterAndReturn(pLinkedNode &node) { // 移除node的直接后继节点并返回
     pLinkedNode oldNode = node->m_next;
     node->m_next = oldNode->m_next;
     return oldNode;
 }
 
-void createListFront(pLinkedList &L, ElementType *&arr, int n) {
-    L = new LinkedList();
+void createListFront(pLinkedList &L, ElementType *arr, int n) {
+    initList(L);
     for (int i = 0; i < n; ++i) {
         pLinkedNode node = new LinkedNode(arr[i]);
         insertNodeAfter(L->m_head, node); // 在头结点之后插入节点
@@ -40,8 +42,8 @@ void createListFront(pLinkedList &L, ElementType *&arr, int n) {
     }
 }
 
-void createListRear(pLinkedList &L, ElementType *&arr, int n) {
-    L = new LinkedList();
+void createListRear(pLinkedList &L, ElementType *arr, int n) {
+    initList(L);
     for (int i = 0; i < n; ++i) {
         pLinkedNode node = new LinkedNode(arr[i]);
         if (listEmpty(L)) // 链表为空
@@ -60,6 +62,7 @@ void initList(pLinkedList &L) {
 }
 
 void destroyList(pLinkedList &L) {
+    if(!L)return;
     pLinkedNode node = L->m_head->m_next, removed;
     while (node) {
         removed = node;
@@ -77,9 +80,8 @@ int listLength(pLinkedList &L) {
     return L->m_length;
 }
 
-#include <cstdio>
-
 void displayList(pLinkedList &L) {
+    if(!L) return;
     printf("LinkedList:[ ");
     for (pLinkedNode p = L->m_head->m_next; p; p = p->m_next) {
         printf("%d ", p->m_data);
