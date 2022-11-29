@@ -206,9 +206,7 @@ void listDelete(pLinkedList &L, int index) {
   }
   ```
 
-  
-
-  ### 删除链表中的元素值最大的节点
+### 删除链表中的元素值最大的节点
 
   [algorithm2-7](../algorithm2-7.cpp)
 
@@ -230,7 +228,7 @@ void listDelete(pLinkedList &L, int index) {
 
   
 
-  ### 对带头结点的链表进行递增排序
+### 对带头结点的链表进行递增排序
 
   [algorithm2-8](../algorithm2-8.cpp)
 

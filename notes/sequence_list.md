@@ -141,7 +141,7 @@ ElementType listDelete(pSqList &L, int index) {
 
   
 
-  ### 以首元素为基准，小于等于它的放其前面
+### 以首元素为基准，小于等于它的放其前面
 
   [algorithm2-4](../algorithm2-3.cpp) 时间复杂度O(n)/空间复杂度O(1)
 
@@ -190,7 +190,7 @@ ElementType listDelete(pSqList &L, int index) {
     }
     ```
 
-  ### 将所有奇数移动到偶数前面
+### 将所有奇数移动到偶数前面
 
   [algorithm2-5](../algorithm2-5.cpp) 时间复杂度O(n)/空间复杂度O(1)
 

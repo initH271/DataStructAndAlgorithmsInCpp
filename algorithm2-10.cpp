@@ -19,7 +19,7 @@ void sortList(pDLinkedList &L) {
         q = p->m_next; // 记住下一节点的位置
 
         pre = L;
-        while (pre->m_next && pre->m_next->m_data < p->m_data) // 找到不小于q的节点
+        while (pre->m_next && pre->m_next->m_data < p->m_data) // 找到不小于p的节点
             pre = pre->m_next;
         p->m_prior = pre; // 插入节点
         p->m_next = pre->m_next;
