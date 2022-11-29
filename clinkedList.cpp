@@ -13,16 +13,16 @@
 
 void createListRear(pCLinkedList &L, ElementType *arr, int n) {
     initList(L);
+    pCLinkedListNode p = L;
     for (int i = 0; i < n; ++i) {
-        pCLinkedListNode node = new CLinkedListNode(arr[i], L->m_prior, L); // 构建新节点，前接尾节点，后接头结点
-        L->m_prior->m_next = node; // 作为尾节点插入
-        L->m_prior = node;
+        pCLinkedListNode node = new CLinkedListNode(arr[i], L); // 构建新节点, 后接头结点
+        p->m_next = node; // 作为尾节点插入
+        p = p->m_next;
     }
 }
 
 void initList(pCLinkedList &L) {
     L = new CLinkedList();
-    L->m_prior = L;
     L->m_next = L;
 }
 

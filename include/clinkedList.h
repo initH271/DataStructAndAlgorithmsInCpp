@@ -15,10 +15,10 @@ typedef int ElementType;
 
 typedef struct CLNode {
     ElementType m_data;
-    struct CLNode *m_prior, *m_next;
+    struct CLNode *m_next;
     explicit CLNode()=default;
-    explicit CLNode(ElementType &data,struct CLNode*prior= nullptr,struct CLNode*next= nullptr):
-            m_data(data),m_next(next),m_prior(prior){}
+    explicit CLNode(ElementType &data,struct CLNode*next= nullptr):
+            m_data(data),m_next(next){}
 } CLinkedListNode, *pCLinkedListNode,
         CLinkedList, *pCLinkedList;
 
@@ -41,6 +41,6 @@ void listDelete(pCLinkedList &L, int index); // 删除循环单链表中的元�
 
 pCLinkedListNode getElement(pCLinkedList &L, int index); // 根据索引获取元素节点
 
-int locateElement(pCLinkedListNode, ElementType &element); // 获取元素索引
+int locateElement(pCLinkedListNode &L, ElementType &element); // 获取元素索引
 
 #endif //CLINKEDLIST_H
