@@ -71,7 +71,7 @@ void listInsert(pDLinkedList &L, int index, ElementType &element) {
     for (i = 0; i < index && node; ++i) {
         node = node->m_next;
     }
-    if (i != index) return;
+    if (i != index || !node) return;
     pDLinkedNode p = new DLinkedNode(element, node, node->m_next);
     node->m_next = p;
 }
@@ -82,7 +82,7 @@ void listDelete(pDLinkedList &L, int index) {
     for (i = 0; i < index && node; ++i) {
         node = node->m_next;
     }
-    if (i != index) return;
+    if (i != index || !node) return;
     pDLinkedNode p = node->m_next;
     p->m_next->m_prior = node;
     node->m_next = p->m_next;
