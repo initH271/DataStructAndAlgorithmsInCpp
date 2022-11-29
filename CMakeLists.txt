@@ -51,8 +51,11 @@ add_executable(algorithm2-11 algorithm2-11.cpp clinkedList.cpp)
 
 add_executable(cdlinkedList cdLinkedList.cpp)
 
-#algorithm2-12
+# algorithm2-12
 add_executable(algorithm2-12 algorithm2-12.cpp cdLinkedList.cpp)
+
+# algorithm2-13
+add_executable(algorithm2-13 algorithm2-13.cpp cdLinkedList.cpp)
 
 # =========顺序栈 及其算法==================================
 
