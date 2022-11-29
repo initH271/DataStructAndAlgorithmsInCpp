@@ -49,3 +49,7 @@ add_executable(sqStack sqStack.cpp)
 # =========链式栈 及其算法==================================
 
 add_executable(linkedStack linkedStack.cpp)
+
+# =========顺序队列 及其算法================================
+
+add_executable(sqQueue sqQueue.cpp)
