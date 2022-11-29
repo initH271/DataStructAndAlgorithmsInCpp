@@ -20,7 +20,7 @@ add_executable(algorithm2-4 algorithm2-4.cpp sqList.cpp include/utils/util.h)
 # algorithm2-5
 add_executable(algorithm2-5 algorithm2-5.cpp sqList.cpp include/utils/util.h)
 
-# =========链表 及其算法==================================
+# =========单链表 及其算法==================================
 
 add_executable(linkedList linkedList.cpp)
 
@@ -30,3 +30,10 @@ add_executable(algorithm2-6 algorithm2-6.cpp linkedList.cpp)
 add_executable(algorithm2-7 algorithm2-7.cpp linkedList.cpp)
 # algorithm2-8
 add_executable(algorithm2-8 algorithm2-8.cpp linkedList.cpp)
+
+# =========双向链表 及其算法================================
+
+add_executable(dlinkedlist dlinkedlist.cpp)
+
+# algorithm2-9
+add_executable(algorithm2-9 algorithm2-9.cpp dlinkedlist.cpp)
