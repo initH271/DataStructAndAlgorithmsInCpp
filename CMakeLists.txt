@@ -39,3 +39,13 @@ add_executable(dlinkedlist dlinkedlist.cpp)
 add_executable(algorithm2-9 algorithm2-9.cpp dlinkedlist.cpp)
 # algorithm2-10
 add_executable(algorithm2-10 algorithm2-10.cpp dlinkedlist.cpp)
+
+# other time: other algorithm as circle linkedlist
+
+# =========顺序栈 及其算法==================================
+
+add_executable(sqStack sqStack.cpp)
+
+# =========链式栈 及其算法==================================
+
+add_executable(linkedStack linkedStack.cpp)
