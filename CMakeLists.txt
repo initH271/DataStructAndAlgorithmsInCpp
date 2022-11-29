@@ -47,6 +47,13 @@ add_executable(clinkedList clinkedList.cpp)
 # algorithm2-11
 add_executable(algorithm2-11 algorithm2-11.cpp clinkedList.cpp)
 
+# =========循环双向链表 及其算法============================
+
+add_executable(cdlinkedList cdLinkedList.cpp)
+
+#algorithm2-12
+add_executable(algorithm2-12 algorithm2-12.cpp cdLinkedList.cpp)
+
 # =========顺序栈 及其算法==================================
 
 add_executable(sqStack sqStack.cpp)
