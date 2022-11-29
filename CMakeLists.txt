@@ -40,7 +40,12 @@ add_executable(algorithm2-9 algorithm2-9.cpp dlinkedlist.cpp)
 # algorithm2-10
 add_executable(algorithm2-10 algorithm2-10.cpp dlinkedlist.cpp)
 
-# other time: other algorithm as circle linkedlist
+# =========循环单链表 及其算法==============================
+
+add_executable(clinkedList clinkedList.cpp)
+
+# algorithm2-11
+add_executable(algorithm2-11 algorithm2-11.cpp clinkedList.cpp)
 
 # =========顺序栈 及其算法==================================
 
@@ -53,3 +58,5 @@ add_executable(linkedStack linkedStack.cpp)
 # =========顺序队列 及其算法================================
 
 add_executable(sqQueue sqQueue.cpp)
+
+# =========
