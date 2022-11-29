@@ -11,14 +11,16 @@
 #include "dlinkedlist.h"
 #include <cstdio>
 
-void reverseList(pDLinkedList &L){
-    pDLinkedNode p = L->m_next,q;
+void reverseList(pDLinkedList &L) {
+    pDLinkedNode p = L->m_next, q;
     L->m_next = nullptr;
-    while (p){
-        q = p->m_next;
-        p->m_next = L->m_next;
+    while (p) {
+        q = p->m_next; // 记住下一节点
+
+        p->m_next = L->m_next; // 头插法插入节点
         p->m_prior = L;
         L->m_next = p;
+
         p = q;
     }
 }
@@ -27,6 +29,7 @@ int main(int argc, char const *argv[]) {
     ElementType arr[] = {1, 8, 0, 4, 9, 7, 5, 2, 3, 6};
     pDLinkedList L;
     createListRear(L, arr, 10);
+    listInsert(L, 10, arr[3]);
     displayList(L);
     printf("逆转双向链表L\n");
     reverseList(L);
