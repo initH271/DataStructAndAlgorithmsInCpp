@@ -4,6 +4,8 @@
 
 ### 声明
 
+[sqList.h](../include/sqList.h)
+
 ```c++
 typedef int ElementType; // 元素类型
 const int MAXSIZE =  10;
@@ -34,9 +36,9 @@ ElementType listDelete(pSqList &L, int index); // 删除索引为index的元素�
 
 ### 定义
 
-```c++
-const char *THEINDEXOUTOFRANGE = "the index out of range";
+[sqList.cpp](../sqList.cpp)
 
+```c++
 void initList(pSqList &L, int size) {
     L->m_data = new ElementType[size];
     L->m_length = 0;

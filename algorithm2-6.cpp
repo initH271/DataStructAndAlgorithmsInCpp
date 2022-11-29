@@ -20,8 +20,8 @@ void splitList(pLinkedList &L, pLinkedList &L1, pLinkedList &L2) {
     pLinkedNode node = L->m_head;
     while (node && node->m_next) {
         node = node->m_next; // an
-        pLinkedNode p = node->m_next; // bn
-        node->m_next = p->m_next; // 取出bn
+        pLinkedNode p = node->m_next; // 取出 bn
+        node->m_next = p->m_next;
         L->m_length--;
 
         p->m_next = L2->m_head->m_next; // 头插法，插入bn

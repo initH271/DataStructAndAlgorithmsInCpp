@@ -13,6 +13,7 @@
 
 #include <exception>
 #include <iostream>
+#include "exceptionMessage.h"
 
 class DsException: public std::exception{
 private:

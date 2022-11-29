@@ -11,7 +11,6 @@
 #include "utils/dsexception.h"
 #include "sqList.h"
 #include <cstdio>
-#include "exceptionMessage.h"
 
 void initList(pSqList &L, int size) {
     L->m_data = new ElementType[size];
