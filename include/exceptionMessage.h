@@ -13,6 +13,6 @@
 
 
 const char *THEINDEXOUTOFRANGE = "the index out of range";
-
+const char *THESTACKEMPTY = "the stack is empty.";
 
 #endif //EXCEPTIONMESSAGE_H
