@@ -1,6 +1,6 @@
 /**
  * @file clinkedList.h
- * @brief: 
+ * @brief: 循环单链表的声明
  * @version: 1.0
  * @author: inith271
  * @email: oy.zf@qq.com
