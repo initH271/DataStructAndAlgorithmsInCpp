@@ -4,9 +4,9 @@ project(dsaincpp)
 set(CMAKE_CXX_STANDARD 11)
 
 # add googletest framework
-add_subdirectory(googletest)
-include_directories(googletest/include googletest)
-target_link_libraries(gtest gtest_main)
+#add_subdirectory(googletest)
+#include_directories(googletest/include googletest)
+#target_link_libraries(gtest gtest_main)
 
 include_directories(include)
 
