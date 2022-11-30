@@ -75,6 +75,10 @@ add_executable(algorithm2-14 algorithm2-14.cpp sqOrderList.cpp)
 
 add_executable(orderLinkedList orderLinkedList.cpp)
 
+# algorithm2-15
+add_executable(algorithm2-15 orderLinkedList.cpp algorithm2-15.cpp)
+
+
 # =========顺序栈 及其算法==================================
 
 add_executable(sqStack sqStack.cpp)

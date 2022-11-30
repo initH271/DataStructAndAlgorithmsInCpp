@@ -37,9 +37,10 @@ int listLength(pOrderLinkedList &L) {
 void listInsert(pOrderLinkedList &L, ElementType &element) {
     pOrderListNode node = new OrderListNode(element);
     pOrderListNode p = L;
-    while (p) {
-        if (p->m_next && element < p->m_next->m_data)
+    while (p && p->m_next) {
+        if (element < p->m_next->m_data)
             break;
+         p = p->m_next;
     }
     node->m_next = p->m_next;
     p->m_next = node;
@@ -48,7 +49,7 @@ void listInsert(pOrderLinkedList &L, ElementType &element) {
 void destroyList(pOrderLinkedList &L) {
     pOrderListNode p = L->m_next;
     while (p) {
-        L = p->m_next;
+        L->m_next = p->m_next;
         delete p;
         p = L->m_next;
     }
