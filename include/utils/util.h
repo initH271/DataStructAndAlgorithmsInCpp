@@ -18,5 +18,12 @@ void swap(T &a, T &b) {
     b = temp;
 }
 
+// 复制源数组source[0, slen) 到 target[start, start=slen)
+template<typename T>
+void copyArray(T *source, T *target, int start, int slen) {
+    for (int i = 0; i < slen; ++i) {
+        target[start++] = source[i];
+    }
+}
 
 #endif //UTIL_H
