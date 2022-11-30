@@ -57,6 +57,13 @@ add_executable(algorithm2-12 algorithm2-12.cpp cdLinkedList.cpp)
 # algorithm2-13
 add_executable(algorithm2-13 algorithm2-13.cpp cdLinkedList.cpp)
 
+# ========线性表应用======================================
+
+add_executable(tableList tableList.cpp)
+
+# 笛卡尔积算法
+add_executable(tablelink tableList.cpp algorithm-tablelink.cpp)
+
 # =========顺序栈 及其算法==================================
 
 add_executable(sqStack sqStack.cpp)
