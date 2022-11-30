@@ -64,6 +64,10 @@ add_executable(tableList tableList.cpp)
 # 笛卡尔积算法
 add_executable(tablelink tableList.cpp algorithm-tablelink.cpp)
 
+# ========有序表的顺序结构 及其算法==========================
+
+add_executable(sqOrderList sqOrderList.cpp)
+
 # =========顺序栈 及其算法==================================
 
 add_executable(sqStack sqStack.cpp)
