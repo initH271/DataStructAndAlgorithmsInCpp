@@ -70,6 +70,11 @@ add_executable(sqOrderList sqOrderList.cpp)
 
 # algorithm2-14
 add_executable(algorithm2-14 algorithm2-14.cpp sqOrderList.cpp)
+
+# ========有序表的链式结构 及其算法==========================
+
+add_executable(orderLinkedList orderLinkedList.cpp)
+
 # =========顺序栈 及其算法==================================
 
 add_executable(sqStack sqStack.cpp)
