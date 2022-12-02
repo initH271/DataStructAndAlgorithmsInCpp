@@ -75,6 +75,9 @@ add_executable(algorithm2-14 algorithm2-14.cpp sqOrderList.cpp)
 # binary search
 add_executable(algorithm-binarySearch algorithm-binarySearch.cpp sqOrderList.cpp)
 
+#algorithm2-17
+add_executable(algorithm2-17 algorithm2-17.cpp sqOrderList.cpp)
+
 # ========有序表的链式结构 及其算法==========================
 
 add_executable(orderLinkedList orderLinkedList.cpp)
@@ -82,7 +85,8 @@ add_executable(orderLinkedList orderLinkedList.cpp)
 # algorithm2-15
 add_executable(algorithm2-15 orderLinkedList.cpp algorithm2-15.cpp)
 
-
+# algorithm2-16
+add_executable(algorithm2-16 algorithm2-16.cpp orderLinkedList.cpp)
 # =========顺序栈 及其算法==================================
 
 add_executable(sqStack sqStack.cpp)
