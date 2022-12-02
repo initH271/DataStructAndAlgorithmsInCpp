@@ -47,11 +47,11 @@ void destroyList(pSqList &L) {
 }
 
 void displayList(pSqList &L) {
-    printf("OrderList:[ ");
+    printf("OrderList:{ ");
     for (int i = 0; i < L->m_length; ++i) {
-        printf("%d ", L->m_data[i]);
+        printf("%d, ", L->m_data[i]);
     }
-    printf("], size=%d\n", L->m_length);
+    printf("}, size=%d\n", L->m_length);
 }
 
 ElementType getElement(pSqList &L, int index) {
