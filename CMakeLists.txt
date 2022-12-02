@@ -14,11 +14,12 @@ include_directories(include)
 add_executable(sqList sqList.cpp)
 
 # algorithm2-3
-add_executable(algorithm2-3 algorithm2-3.cpp sqList.cpp include/utils/util.h)
+add_executable(algorithm2-3 algorithm2-3.cpp sqList.cpp)
 # algorithm2-4
-add_executable(algorithm2-4 algorithm2-4.cpp sqList.cpp include/utils/util.h)
+add_executable(algorithm2-4 algorithm2-4.cpp sqList.cpp)
 # algorithm2-5
-add_executable(algorithm2-5 algorithm2-5.cpp sqList.cpp include/utils/util.h)
+add_executable(algorithm2-5 algorithm2-5.cpp sqList.cpp)
+
 
 # =========单链表 及其算法==================================
 
@@ -70,6 +71,9 @@ add_executable(sqOrderList sqOrderList.cpp)
 
 # algorithm2-14
 add_executable(algorithm2-14 algorithm2-14.cpp sqOrderList.cpp)
+
+# binary search
+add_executable(algorithm-binarySearch algorithm-binarySearch.cpp sqOrderList.cpp)
 
 # ========有序表的链式结构 及其算法==========================
 
