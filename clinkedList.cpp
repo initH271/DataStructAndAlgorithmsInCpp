@@ -8,8 +8,8 @@
  *
  **/
 
-#include "clinkedList.h"
 #include <cstdio>
+#include "clinkedList.h"
 
 void createListRear(pCLinkedList &L, ElementType *arr, int n) {
     initList(L);

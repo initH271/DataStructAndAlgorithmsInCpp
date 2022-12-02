@@ -12,7 +12,6 @@
 #include <cstdio>
 #include "linkedList.h"
 #include "utils/dsexception.h"
-#include "exceptionMessage.h"
 
 void insertNodeAfter(pLinkedNode &node, pLinkedNode &x) { // 在node后插入节点
     x->m_next = node->m_next;

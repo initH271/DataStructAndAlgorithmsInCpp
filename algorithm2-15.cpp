@@ -39,23 +39,4 @@ void solution(pOrderLinkedList &L1, pOrderLinkedList &L2, pOrderLinkedList &L3) 
     }
 }
 
-int main(int argc, char const *argv[]) {
-    ElementType arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9,
-                         10, 9, 7, 5, 3, 1, 44, 66, 77,
-                         3, 1, 5, 34, 57, 12};
-    pOrderLinkedList L1, L2, L3;
-    createList(L1, arr, 9);
-    createList(L2, &arr[9], 9);
-    createList(L3, &arr[18], 6);
 
-    displayList(L1);
-    displayList(L2);
-    displayList(L3);
-    printf("求L1,L2,L3的交集:\n");
-    solution(L1, L2, L3);
-    displayList(L1);
-    destroyList(L1);
-    destroyList(L2);
-    destroyList(L3);
-    return 0;
-}

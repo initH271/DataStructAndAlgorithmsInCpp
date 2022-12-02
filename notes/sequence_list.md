@@ -39,6 +39,10 @@ ElementType listDelete(pSqList &L, int index); // 删除索引为index的元素�
 [sqList.cpp](../sqList.cpp)
 
 ```c++
+#include "utils/dsexception.h"
+#include "sqList.h"
+#include <cstdio>
+
 void initList(pSqList &L, int size) {
     L->m_data = new ElementType[size];
     L->m_length = 0;
@@ -105,7 +109,7 @@ ElementType listDelete(pSqList &L, int index) {
 
 ### 从顺序表中删除一个元素
 
-[algorithm2-3](../algorithm2-3.cpp) 时间复杂度O(n) / 空间复杂度O(1)
+[algorithm2-3](../algorithm2-3.cpp) T(O(n)) / S(O(1))
 
 - algorithm 1：使用原有空间进行移动操作，覆盖待删除元素 `x`
 
@@ -139,11 +143,38 @@ ElementType listDelete(pSqList &L, int index) {
   }
   ```
 
-  
+- test:
+
+  ```C++
+  int main(int argc, char const *argv[]) {
+      int arr[] = {1, 3, 6, 7, 15, 4, 8, 7, 19, 17, 7, 13, 9, 4, 10, 11, 8, 22, 6, 20, 19, 1};
+      pSqList L = new SqList;
+      createList(L, arr, 22);
+      displayList(L);
+      int x = 8;
+      deleteX1(L, x);
+      printf("删除x=%d的元素后\n", x);
+      displayList(L);
+      x = 1;
+      deleteX1(L, x);
+      printf("删除x=%d的元素后\n", x);
+      displayList(L);
+      x = 7;
+      deleteX2(L, x);
+      printf("删除x=%d的元素后\n", x);
+      displayList(L);
+      destroyList(L);
+      return 0;
+  }
+  ```
+
+- result：
+
+  <img src="https://cdn.jsdelivr.net/gh/initH271/resource-public/img/20221202132728.png" alt="image-20221202132728472" style="zoom:50%;" align="left" />
 
 ### 以首元素为基准，小于等于它的放其前面
 
-  [algorithm2-4](../algorithm2-3.cpp) 时间复杂度O(n)/空间复杂度O(1)
+  [algorithm2-4](../algorithm2-3.cpp) T(O(n)) / S(O(1))
 
   - algorithm 1: 运用partition算法，使用两个指针，右指针从右向左扫描，寻找不大于基准的元素；左指针从左向右扫描，寻找大于基准的元素，找到后将其交换位置。
 
@@ -189,10 +220,31 @@ ElementType listDelete(pSqList &L, int index) {
         return left;
     }
     ```
+    
+- test:
+
+  ```c++
+  int main(int argc, char const *argv[]) {
+  
+      int arr[] = {3, 8, 2, 7, 1, 5, 3, 4, 6, 0};
+      pSqList L = new SqList;
+      createList(L, arr, 10);
+      displayList(L);
+      printf("以第一个元素%d为基准，小于它的在它前面\n", L->m_data[0]);
+      printf("base = %d\n", partition1(L));
+      displayList(L);
+      destroyList(L);
+      return 0;
+  }
+  ```
+
+- result:
+
+  <img src="https://cdn.jsdelivr.net/gh/initH271/resource-public/img/20221202133022.png" alt="image-20221202133022020" style="zoom:50%;" align="left" />
 
 ### 将所有奇数移动到偶数前面
 
-  [algorithm2-5](../algorithm2-5.cpp) 时间复杂度O(n)/空间复杂度O(1)
+  [algorithm2-5](../algorithm2-5.cpp) T(O(n)) / S(O(1))
 
   - algorithm 1：partition算法，使用左右两个指针从两个方向开始扫描后，匹配到的元素进行交换
 
@@ -227,7 +279,25 @@ ElementType listDelete(pSqList &L, int index) {
     }
     ```
 
-    
+- test:
+
+  ```c++
+  int main(int argc, char const *argv[]) {
+      int arr[] = {3, 8, 2, 7, 1, 5, 3, 4, 6, 0};
+      pSqList L = new SqList;
+      createList(L, arr, 10);
+      displayList(L);
+      printf("移动奇数到偶数的前面，");
+      printf("分界 = %d\n", move2(L));
+      displayList(L);
+      destroyList(L);
+      return 0;
+  }
+  ```
+
+- result:
+
+  <img src="https://cdn.jsdelivr.net/gh/initH271/resource-public/img/20221202133136.png" alt="image-20221202133136190" style="zoom:50%;" align="left" />
 
   
 

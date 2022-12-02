@@ -41,15 +41,15 @@ int main(int argc, char const *argv[]) {
     displayList(L);
     int x = 8;
     deleteX1(L, x);
-    printf("\n删除x=%d的元素后\n", x);
+    printf("删除x=%d的元素后\n", x);
     displayList(L);
     x = 1;
     deleteX1(L, x);
-    printf("\n删除x=%d的元素后\n", x);
+    printf("删除x=%d的元素后\n", x);
     displayList(L);
     x = 7;
     deleteX2(L, x);
-    printf("\n删除x=%d的元素后\n", x);
+    printf("删除x=%d的元素后\n", x);
     displayList(L);
     destroyList(L);
     return 0;

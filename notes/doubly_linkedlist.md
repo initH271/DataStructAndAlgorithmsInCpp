@@ -38,6 +38,9 @@ int locateElement(pDLinkedList &L, ElementType &element); // 查找元素在双�
 [dlinkedList.cpp](../dlinkedList.cpp)
 
 ```c++
+#include <cstdio>
+#include "dlinkedlist.h"
+
 void initList(pDLinkedList &L) {
     L = new DLinkedList();
     L->m_prior = L->m_next = nullptr;
@@ -142,7 +145,7 @@ int locateElement(pDLinkedList &L, ElementType &element) {
 
 ### 倒置双向链表的元素
 
-[algorithm2-9](../algorithm2-9.cpp)
+[algorithm2-9](../algorithm2-9.cpp) T(O(n)) / S(O(1))
 
 - algorithm 1: 取出原有头结点，使用头插法插入原有节点
 
@@ -162,11 +165,30 @@ int locateElement(pDLinkedList &L, ElementType &element) {
   }
   ```
 
-  
+- test:
+
+  ```c++
+  int main(int argc, char const *argv[]) {
+      ElementType arr[] = {1, 8, 0, 4, 9, 7, 5, 2, 3, 6};
+      pDLinkedList L;
+      createListRear(L, arr, 10);
+      listInsert(L, 10, arr[3]);
+      displayList(L);
+      printf("逆转双向链表L\n");
+      reverseList(L);
+      displayList(L);
+      destroyList(L);
+      return 0;
+  }
+  ```
+
+- result:
+
+  <img src="https://cdn.jsdelivr.net/gh/initH271/resource-public/img/20221202134107.png" alt="image-20221202134107265" style="zoom:50%;" align=left />
 
 ### 递增排序双向链表
 
-[algorithm2-10](./algorithm2-10.cpp)
+[algorithm2-10](./algorithm2-10.cpp) T(O(n)) / S(O(1))
 
 - algorithm 1：用原链表构造一个单节点链表，遍历剩下的节点，比较后插入对应位置
 
@@ -190,4 +212,23 @@ int locateElement(pDLinkedList &L, ElementType &element) {
   }
   ```
 
-  
+- test:
+
+  ```c++
+  int main(int argc, char const *argv[]) {
+      ElementType arr[] = {1, 8, 0, 4, 9, 7, 5, 2, 3, 6};
+      pDLinkedList L;
+      createListRear(L, arr, 10);
+      listInsert(L, 10, arr[3]);
+      displayList(L);
+      printf("递增排序双向链表L\n");
+      sortList(L);
+      displayList(L);
+      destroyList(L);
+      return 0;
+  }
+  ```
+
+- result
+
+  <img src="https://cdn.jsdelivr.net/gh/initH271/resource-public/img/20221202134237.png" alt="image-20221202134237213" style="zoom:50%;" align=left />

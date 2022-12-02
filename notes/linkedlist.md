@@ -49,6 +49,10 @@ void listDelete(pLinkedList &L, int index); // 删除链表中的元素
 [linkedList.cpp](../linkedList.cpp)
 
 ```c++
+#include <cstdio>
+#include "linkedList.h"
+#include "utils/dsexception.h"
+
 void insertNodeAfter(pLinkedNode &node, pLinkedNode &x) { // 在node后插入节点
     x->m_next = node->m_next;
     node->m_next = x;
@@ -182,7 +186,7 @@ void listDelete(pLinkedList &L, int index) {
 
 > 将带头结点的单链表L拆分为两个带头结点的单链表L1,L2，其中$L = [a_1,b_1,a_2,b_2,...,a_n,b_n], L1 = [a_1,a_2,...,a_n],L2=[b_n,b_{n-1},...,b_1]$，L1使用L的头结点。
 
-[algorithm2-6](../algorithm2-6.cpp) T-O(n)/S-O(1)
+[algorithm2-6](../algorithm2-6.cpp) T-O(n)/S-O(1) 
 
 - algorithm 1：遍历链表L，取出bn使用头插法拆入L2。
 
@@ -205,10 +209,40 @@ void listDelete(pLinkedList &L, int index) {
       }
   }
   ```
+  
+- test:
+
+  ```c++
+  int main() {
+      pLinkedList L = nullptr, L1 = nullptr, L2 = nullptr;
+      int n = 10;
+      ElementType arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  
+      createListRear(L, arr, n);
+      printf("L:");
+      displayList(L);
+  
+      printf("L->L1,L2\n");
+      splitList(L, L1, L2);
+  
+      printf("L1:");
+      displayList(L1);
+      printf("L2:");
+      displayList(L2);
+  
+      destroyList(L1);
+      destroyList(L2);
+      return 0;
+  }
+  ```
+
+- result:
+
+  <img src="https://cdn.jsdelivr.net/gh/initH271/resource-public/img/20221202133446.png" alt="image-20221202133446134" style="zoom:50%;" align=left />
 
 ### 删除链表中的元素值最大的节点
 
-  [algorithm2-7](../algorithm2-7.cpp)
+  [algorithm2-7](../algorithm2-7.cpp) T(O(n)) / S(O(1))
 
   - algorithm 1: 由头结点开始，比较其后继节点的元素，存储当前最大元素节点的直接前继。
 
@@ -225,12 +259,58 @@ void listDelete(pLinkedList &L, int index) {
         L->m_length--;
     }
     ```
+    
+- test:
 
-  
+  ```c++
+  int main(int argc, char const *argv[]) {
+      pLinkedList L;
+      int n = 10;
+      ElementType arr[] = {1, 3, 2, 9, 0, 4, 7, 6, 5, 8};
+      createListRear(L, arr, n);
+      displayList(L);
+      printf("删除元素最大的节点\n");
+      deleteMaxNode(L);
+      displayList(L);
+      printf("删除元素最大的节点\n");
+      deleteMaxNode(L);
+      displayList(L);
+      printf("删除元素最大的节点\n");
+      deleteMaxNode(L);
+      displayList(L);
+      printf("删除元素最大的节点\n");
+      deleteMaxNode(L);
+      displayList(L);
+      printf("删除元素最大的节点\n");
+      deleteMaxNode(L);
+      displayList(L);
+      printf("删除元素最大的节点\n");
+      deleteMaxNode(L);
+      displayList(L);
+      printf("删除元素最大的节点\n");
+      deleteMaxNode(L);
+      displayList(L);
+      printf("删除元素最大的节点\n");
+      deleteMaxNode(L);
+      displayList(L);
+      printf("删除元素最大的节点\n");
+      deleteMaxNode(L);
+      displayList(L);
+      printf("删除元素最大的节点\n");
+      deleteMaxNode(L);
+      displayList(L);
+      destroyList(L);
+      return 0;
+  }
+  ```
+
+- result:
+
+  <img src="https://cdn.jsdelivr.net/gh/initH271/resource-public/img/20221202133702.png" alt="image-20221202133702569" style="zoom:50%;" align=left />
 
 ### 对带头结点的链表进行递增排序
 
-  [algorithm2-8](../algorithm2-8.cpp)
+  [algorithm2-8](../algorithm2-8.cpp) T(O(n)) / S(O(1))
 
   - algorithm 1：用原链表的空间构建一个单节点的链表，从原链表的第二个节点开始与单链表中的节点比较，插入在大于其的节点之前。
 
@@ -254,6 +334,24 @@ void listDelete(pLinkedList &L, int index) {
     }
     ```
 
-    
+- test:
+
+  ```c++
+  int main(int argc, char const *argv[]) {
+      pLinkedList L;
+      ElementType arr[] = {1, 3, 2, 9, 0, 4, 7, 6, 5, 8};
+      createListRear(L, arr, 10);
+      displayList(L);
+      printf("对链表进行递增排序\n");
+      sort(L);
+      displayList(L);
+      destroyList(L);
+      return 0;
+  }
+  ```
+
+- result:
+
+  <img src="https://cdn.jsdelivr.net/gh/initH271/resource-public/img/20221202133817.png" alt="image-20221202133817057" style="zoom:50%;" align=left />
 
   

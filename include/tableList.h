@@ -32,6 +32,6 @@ typedef struct TableNode { // 表节点，表头
 void createTable(pTable &T); // 从用户输入创建一个表
 void destroyTable(pTable &T); // 销毁一个表
 void displayTable(pTable &T); // 输出一个表
-void linkTable(pTable &s1, pTable &s2, pTable &T); // 由源表s1,s2笛卡尔积的结果存储到表T
+void linkTable(pTable &s1, pTable &s2, pTable &T); // 由源表s1,s2连接的结果存储到表T
 
 #endif //TABLELIST_H

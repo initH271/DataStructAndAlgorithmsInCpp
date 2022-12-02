@@ -59,9 +59,6 @@ int main(int argc, char const *argv[]) {
     printf("删除元素最大的节点\n");
     deleteMaxNode(L);
     displayList(L);
-    printf("删除元素最大的节点\n");
-    deleteMaxNode(L);
-    displayList(L);
     destroyList(L);
     return 0;
 }
