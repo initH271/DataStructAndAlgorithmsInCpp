@@ -305,8 +305,58 @@ void listDelete(pOrderLinkedList &L, int index) {
   [algorithm2-17](../algorithm2-17.cpp)
 
   - algorithm 1: 对长度为n的有序表中位数（如n为偶数，中位数取中间两位前一位）
+
+    ```c++
+    ElementType findMedian(pSqList &L1, pSqList &L2) {
+        int q = 0; // L1 指针
+        int p = 0; // L2 指针
+        int count = 0;
+        while (q < L1->m_length && p < L2->m_length) {
+            count++;
+            if (L1->m_data[q] <= L2->m_data[p]) // 扫描L1表
+                if (count == L1->m_length)
+                    return L1->m_data[q];
+                else {
+                    q++;
+                }
+            else // 扫描L2表
+            if (count == L2->m_length)
+                return L2->m_data[p];
+            else
+                p++;
+        }
+        return count == L1->m_length ? L1->m_data[q] : L2->m_data[p];
+    }
+    ```
+
   - test:
+
+    ```c++
+    int main(int argc, char const *argv[]) {
+        ElementType arr[] = {1, 2, 3, 4, 6, 7, 8, 9,
+                             10, 9, 11, 5, 3, 1, 44, 66, 77,
+                             3, 1, 5, 34, 55, 57, 34};
+        pSqList L1, L2, L3;
+        createList(L1, arr, 12);
+        createList(L2, &arr[12], 12);
+        createList(L3, arr, 24);
+        displayList(L1);
+        displayList(L2);
+        printf("两有序表的中位数是%d\n", findMedian(L1, L2));
+        displayList(L3); // 验证
+        int mid = L3->m_length / 2 - 1;
+        printf("正确的中位数=%d, 索引为%d\n", L3->m_data[mid], mid);
+        destroyList(L1);
+        destroyList(L2);
+        return 0;
+    }
+    ```
+
+    
+
   - result:
+
+    <img src="https://cdn.jsdelivr.net/gh/initH271/resource-public/img/20221202161238.png" alt="image-20221202161238716" style="zoom:50%;" align=left />
 
   
 
