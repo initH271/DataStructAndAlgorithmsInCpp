@@ -10,6 +10,9 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(include)
 
+# test demo
+add_executable(test_demo test_demo.cpp)
+
 # =========顺序表 及其算法=================================
 add_executable(sqList sqList.cpp)
 
